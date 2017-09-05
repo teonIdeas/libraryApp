@@ -2,12 +2,8 @@ package com.library.app.category.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "category")
@@ -18,7 +14,9 @@ public class Category implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull
 	@Column(unique = true)
+	@Size(min = 2, max = 25)
 	private String name;
 
 	public Category() {
