@@ -48,7 +48,7 @@ public class CategoryRepository {
 		return query.setMaxResults(1).getResultList().size() > 0;
 	}
 
-	public Object alreadyExistsById(Long categoryAddedId) {
+	public boolean alreadyExistsById(Long categoryAddedId) {
 		return em.createQuery("SELECT 1 FROM Category e WHERE e.id = :id")
 				.setParameter("id", categoryAddedId)
 				.setMaxResults(1)
