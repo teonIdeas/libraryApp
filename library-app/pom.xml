@@ -134,5 +134,6 @@
 
 	<modules>
 		<module>library-module</module>
+		<module>library-resource</module>
 	</modules>
 </project>
